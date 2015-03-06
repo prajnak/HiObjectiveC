@@ -54,6 +54,53 @@ int main(int argc, const char * argv[]) {
         }
         
         //Loops
+        int model = 1980;
+        int ey = 0;
+        while (ey<5) {
+            if (ey == 3) {
+                NSLog(@"Exiting loop");
+                break;
+            }
+            NSLog(@"Current year is %d", model+ey);
+            ey++;
+            
+        }
+        for (int i =0; i <= 10000 ; i++) {
+            NSLog(@"%d modulo 2 is %d", i, i%2);
+            if (i==999) {
+                break;
+            }
+        }
+        
+        //For-in loops are called fast enumaerators.
+        //more efficient way to iterate over Objective-C
+        //collections like NSSet and NSArray
+        NSArray *models = @[@"Ford", @"Honda", @"Acura", @"Toyota"];
+        for (id model in models) {
+            NSLog(@"%@", model);
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
         
     }
     return 0;
