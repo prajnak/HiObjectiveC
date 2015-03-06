@@ -8,6 +8,25 @@
 
 #import <Foundation/Foundation.h>
 
+// MACROS
+// Low level way to define symbolic constants and
+// space saving abbreviations. #define directive maps
+// a macro name to an expansion, which can be an arbitrary
+// sequence of characters
+
+#define PI 3.14159
+#define RAD_TO_DEG(radians) (radians * 180/PI)
+
+// TYPEDEFS
+// can be used to redefine existing types or add new data types.
+// after definition, they can be used like any other data type.
+typedef unsigned char ColorComponent;
+typedef struct {
+    unsigned char red;
+    unsigned char green;
+    unsigned char blue;
+} Color;
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         // insert code here...
@@ -54,23 +73,23 @@ int main(int argc, const char * argv[]) {
         }
         
         //Loops
-        int model = 1980;
-        int ey = 0;
-        while (ey<5) {
-            if (ey == 3) {
-                NSLog(@"Exiting loop");
-                break;
-            }
-            NSLog(@"Current year is %d", model+ey);
-            ey++;
-            
-        }
-        for (int i =0; i <= 10000 ; i++) {
-            NSLog(@"%d modulo 2 is %d", i, i%2);
-            if (i==999) {
-                break;
-            }
-        }
+//        int model = 1980;
+//        int ey = 0;
+//        while (ey<5) {
+//            if (ey == 3) {
+//                NSLog(@"Exiting loop");
+//                break;
+//            }
+//            NSLog(@"Current year is %d", model+ey);
+//            ey++;
+//            
+//        }
+//        for (int i =0; i <= 10000 ; i++) {
+//            NSLog(@"%d modulo 2 is %d", i, i%2);
+//            if (i==999) {
+//                break;
+//            }
+//        }
         
         //For-in loops are called fast enumaerators.
         //more efficient way to iterate over Objective-C
@@ -80,26 +99,15 @@ int main(int argc, const char * argv[]) {
             NSLog(@"%@", model);
         }
         
+        // types defined using typedef
         
+        ColorComponent red = 255;
+        ColorComponent blue = 160;
+        ColorComponent green = 0;
+        NSLog(@"Your paint job is R:%hhu, G:%hhu, B:%hhu", red, blue, green);
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        Color carColor = {255,160,0};
+        NSLog(@"Your paint job is (R:%d, G:%d, B:%d)", carColor.red, carColor.green, carColor.blue);
 
         
     }
