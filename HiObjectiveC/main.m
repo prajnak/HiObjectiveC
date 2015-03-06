@@ -44,9 +44,46 @@ typedef enum {
     TOYOTA
 } CarModel;
 
+
+// FUNCTIONS
+// ObjC relies entirely on C for functions
+// Functions need to be defined before they are used
+// separating function declarations from implementations
+// is really more useful for organizing large frameworks.
+
+int getRandomInteger(int min, int max) {
+    return arc4random_uniform(max-min+1);
+}
+
+NSString *getRandomMake(NSArray *makes) {
+    int max = (int)[makes count];
+    int makeIndex = arc4random_uniform(max);
+    return makes[makeIndex];
+}
+
+// STATIC keyword
+// Static functions are limited in scope to the file they are defined in.
+// Static variables values are remembered by the function across multiple
+// invocations of the functions. Static local variables aren't affected at all inside the function.
+
+int countByTwo() {
+    static int currentCount = 0;
+    currentCount += 2;
+    return currentCount;
+}
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         // insert code here...
+        int randomNum = getRandomInteger(0, 1000);
+        NSLog(@"the int is %d", randomNum);
+        
+        NSArray *makes = @[@"Honda", @"Ford", @"Nissan", @"Porsche"];
+        NSLog(@"Selected a %@", getRandomMake(makes));
+        NSLog(@"%d",countByTwo());
+        NSLog(@"%d",countByTwo());
+
+        
         double odometer = 10.56;
         int odoAsInteger = (int)odometer;
         NSLog(@"You've driven %.2f miles", odometer);
@@ -161,6 +198,9 @@ int main(int argc, const char * argv[]) {
         // & - reference operator that returns the memory address of a variable
         // * - dereference operator returns the value stored in a memory address.
         
+        //The only thing that you really have to understand is that all
+        //Objective-C objects are referenced as pointers.
+        
         int year = 1967;
         int *pointer = &year;
         *pointer = 1966;
@@ -169,15 +209,52 @@ int main(int argc, const char * argv[]) {
         // The real utility of pointers lies in the fact that a pointer can be moved to
         // surrounding memory addresses. very useful for navigating arrays which are just
         // contiguous blocks of memory.
-        
         char model[5] = {'h', 'o', 'n', 'd', 'a'};
         char *modPtr = &model[0];
         for (int i=0; i<5; i++) {
             NSLog(@"The value at memory address %p is %c", modPtr, *modPtr);
             modPtr++;
         }
+        // can access an arbitrary address relative to the current pointer position
         NSLog(@"The first letter is %c", *(modPtr-5));
+        
+        // NULL POINTERS
+        // special kind of pointer that doesn't point to anything. referenced through the
+        // NULL macro. useful for indicating empty variables.
+        // C uses NULL -----> Obj-C uses nil
+        year = 2000;
+        int *yearPtr = &year;
+        *yearPtr = 2001;
+        yearPtr = NULL;
+        NSLog(@"value of year is %d and value of yearPtr is %p", year,yearPtr);
+        
+        NSString *anObject;    // An Objective-C object
+        anObject = NULL;       // This will work
+        anObject = nil;        // But this is preferred
+        int *aPointer;         // A plain old C pointer
+        aPointer = nil;        // Don't do this
+        aPointer = NULL;       // Do this instead
+        
+        // VOID Pointers
+        // Its a generic pointer that can point to anything. A reference to an arbitrary
+        // memory address. A void pointer needs to be cast to a non-void pointer to interpret
+        // its contents. their generic nature gives flexibility.
+        void *genericPtr = &year;
+        NSLog(@"the pointer address is %p", (int*)genericPtr);
+        
+        // Obj-C Pointers
+        // All ObjC objects are referenced as pointers. An NSString object must be stored
+        // as a pointer, not a variable. ObjC is designed to work with pointers. After defining
+        // pointer, basically forget the fact that its a pointer.
+        NSString *mdls = @"Honda";
+        
+        
+        // C++ in Obj-C
+        // C++ code can be inserted into Obj-C files. Use .mm extension so
+        // compiler can interpret C++ code along with C and ObjC
         
     }
     return 0;
 }
+
+
