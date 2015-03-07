@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CarUtilities.h"
 
 // MACROS
 // Low level way to define symbolic constants and
@@ -71,6 +72,12 @@ int countByTwo() {
     currentCount += 2;
     return currentCount;
 }
+
+// FUNCTION LIBRARIES
+// No namespaces in Obj-C, so need to use unique identifiers in function names
+// to prevent collisions.
+
+
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -246,13 +253,22 @@ int main(int argc, const char * argv[]) {
         // All ObjC objects are referenced as pointers. An NSString object must be stored
         // as a pointer, not a variable. ObjC is designed to work with pointers. After defining
         // pointer, basically forget the fact that its a pointer.
-        NSString *mdls = @"Honda";
+       // NSString *mdls = @"Honda";
         
         
         // C++ in Obj-C
         // C++ code can be inserted into Obj-C files. Use .mm extension so
         // compiler can interpret C++ code along with C and ObjC
         
+        
+        NSDictionary *makesAndModels = @{
+                                         @"Ford": @[@"Explorer", @"F-150"],
+                                         @"Honda": @[@"Accord", @"Civic", @"Pilot"],
+                                         @"Nissan": @[@"370Z", @"Altima", @"Versa"],
+                                         @"Porsche": @[@"911 Turbo", @"Boxster", @"Cayman S"]
+                                         };
+        NSString *randomCar = CUGetRandomMakeAndModel(makesAndModels);
+        NSLog(@"Selected a %@", randomCar);
     }
     return 0;
 }
