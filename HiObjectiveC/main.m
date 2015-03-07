@@ -90,6 +90,11 @@ int main(int argc, const char * argv[]) {
         //and the method in square brackets, separated by a space. Arguments
         //are passed after the method name, preceded by a colon
         
+        //An object's properties may be accessed by either the synthesize's model
+        // and setModel. Or, they can also be set using the dot syntax as shown
+        
+        [Car setDefaultModel:@"Nissan Acura"];
+        
         Car *toyota = [[Car alloc] init];
         toyota.model = @"Toyota Camry";
         
@@ -99,6 +104,9 @@ int main(int argc, const char * argv[]) {
         NSLog(@"changed the car to a %@", [toyota model]);
         
         [toyota drive];
+        
+        //Class methods can be called on a class only. NOT an instance of a class
+        
     }
     
     

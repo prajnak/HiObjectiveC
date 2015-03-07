@@ -19,7 +19,14 @@
 @property (copy) NSString *model;
 
 // This line declares a method drive that takes no parameters and returns a void type.
-// the minus sign prepended means this is an instance method and not a class method
+// the minus sign prepended means this is an INSTANCE METHOD and not a class method
 - (void) drive;
+
+//Now make a class method interface. represented by the + sign.
++ (void)setDefaultModel: (NSString *)aModel;
+
+//No constructor methods in Obj-C. init is default initializtion method
+//Custom initialization methods just have to start with "init"
+-(id)initWithModel: (NSString *)aModel;
 
 @end
