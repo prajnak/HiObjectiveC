@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "CarUtilities.h"
+#import "Car.h"
 
 // MACROS
 // Low level way to define symbolic constants and
@@ -78,8 +79,35 @@ int countByTwo() {
 // to prevent collisions.
 
 
-
 int main(int argc, const char * argv[]) {
+    @autoreleasepool {
+        //after interface has been imported, class is instantiated using the
+        // alloc/init pattern. its a 2 step process. alloc first and
+        // instantiate it later
+        
+        //ALL OBJECTS MUST BE STORED AS POINTERS
+        // To call a method on an Objective-C object, you place the instance
+        //and the method in square brackets, separated by a space. Arguments
+        //are passed after the method name, preceded by a colon
+        
+        Car *toyota = [[Car alloc] init];
+        toyota.model = @"Toyota Camry";
+        
+        NSLog(@"created a model for %@", [toyota model ]);
+        
+        [toyota setModel:@"Toyota Corolla"];
+        NSLog(@"changed the car to a %@", [toyota model]);
+        
+        [toyota drive];
+    }
+    
+    
+    return 0;
+}
+
+
+
+int mainTwo(int argc, const char * argv[]) {
     @autoreleasepool {
         // insert code here...
         int randomNum = getRandomInteger(0, 1000);
