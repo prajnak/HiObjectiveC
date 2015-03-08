@@ -93,19 +93,16 @@ int main(int argc, const char * argv[]) {
         //An object's properties may be accessed by either the synthesize's model
         // and setModel. Or, they can also be set using the dot syntax as shown
         
-        [Car setDefaultModel:@"Nissan Acura"];
+       // [Car setDefaultModel:@"Nissan Acura"];
+
         
-        Car *toyota = [[Car alloc] init];
-        toyota.model = @"Toyota Camry";
+        Car *delorean = [[Car alloc] initWithModel:@"DeLorean"];
+        NSLog(@"changed the car to a %@", [delorean model]);
+        NSLog(@"%@ is an instance of %@", [delorean model], [delorean class]);
         
-        NSLog(@"created a model for %@", [toyota model ]);
+        [delorean drive];
         
-        [toyota setModel:@"Toyota Corolla"];
-        NSLog(@"changed the car to a %@", [toyota model]);
-        
-        [toyota drive];
-        
-        //Class methods can be called on a class only. NOT an instance of a class
+        //Class methods can be called on a class only. NOT on an instance of a class
         
     }
     

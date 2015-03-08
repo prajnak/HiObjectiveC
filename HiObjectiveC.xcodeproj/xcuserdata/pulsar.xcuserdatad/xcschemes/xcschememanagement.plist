@@ -9,10 +9,20 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>ScreenRecorder.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>8A3FB7711AAA448700114D62</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8AF763241AAB7EAD00FF9905</key>
 		<dict>
 			<key>primary</key>
 			<true/>

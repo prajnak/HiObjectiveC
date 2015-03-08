@@ -23,7 +23,7 @@ static NSString *_defaultModel;
 //synthesize directive gets XCode to automatically generate getters and
 //setters for a property.By default, the getter is simply the property name (model)
 // , and the setter is the capitalized name with the set prefix (setModel)
-@synthesize model = _model;
+@synthesize model = _model; //optional
 
 
 // self keyword refers to the instance calling this method.
@@ -41,8 +41,12 @@ static NSString *_defaultModel;
     _defaultModel = [aModel copy];
 }
 
-//initialization methods always return a reference to themselves.
-//if not initialized, return nil
+// INSTANCE INITIALIZATION
+// initialization methods always return a reference to themselves.
+// if not initialized, return nil. we directly assigned values to the _model and
+// _odometer instance variables in initWithModel:. Remember that this is one of the
+// only places you should do this—in the rest of your methods you should be using
+// self.model and self.odometer.
 
 -(id)initWithModel:(NSString *)aModel {
     self = [super init];
@@ -56,6 +60,19 @@ static NSString *_defaultModel;
 -(id)init {
     //forward to the initWithModel method
     return [self initWithModel:_defaultModel];
+}
+
+// CLASS INITIALIZATION
+// this is the class-level equivalent of init. sets up the class before
+// anyone uses it. This method is called for every class before its used.
+// Any subclasses will also call this method along with their own initialize
+// method. so its important to add a check to ensure the initliaze method
+// wasn't called by a subclass. "self" here refers to the class itself, not
+// an instance.
++(void)initialize {
+    if (self == [Car class]) {
+        _defaultModel = @"Nissan MX";
+    }
 }
 
 @end
