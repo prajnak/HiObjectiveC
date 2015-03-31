@@ -31,5 +31,5 @@ int main(int argc, const char * argv[]) {
         NSURL *path = [NSURL URLWithString:@"file:///Users/pulsar/github/ee/b.mov/"];
         [sc screenRecording: path];
     }
-    return 0;
+//    return 0;
 }

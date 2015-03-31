@@ -68,9 +68,9 @@
     [mMovFileOutput startRecordingToOutputFileURL:destPath recordingDelegate:self];
     
     //timers
-    mTimer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(finishRecord:) userInfo:nil repeats:NO];
+    mTimer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(timerFireMethod:) userInfo:nil repeats:NO];
 }
--(void)finishRecord:(NSTimer *)timer
+-(void)timerFireMethod:(NSTimer *)timer
 {
     // Stop recording to the destination movie file
     [mMovFileOutput stopRecording];

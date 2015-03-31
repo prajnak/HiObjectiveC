@@ -12,6 +12,7 @@
 		8A8C90991AAA88090056B8C6 /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A8C90981AAA88090056B8C6 /* Car.m */; };
 		8AF763281AAB7EAD00FF9905 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF763271AAB7EAD00FF9905 /* main.m */; };
 		8AF7632F1AAB81F500FF9905 /* ScreenRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF7632E1AAB81F500FF9905 /* ScreenRecorder.m */; };
+		8AF787271AAF8D2D00FF9905 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AF787261AAF8D2D00FF9905 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -46,6 +47,7 @@
 		8AF763271AAB7EAD00FF9905 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8AF7632D1AAB81F500FF9905 /* ScreenRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenRecorder.h; sourceTree = SOURCE_ROOT; };
 		8AF7632E1AAB81F500FF9905 /* ScreenRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScreenRecorder.m; sourceTree = SOURCE_ROOT; };
+		8AF787261AAF8D2D00FF9905 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AF787271AAF8D2D00FF9905 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +72,7 @@
 		8A3FB7691AAA448700114D62 = {
 			isa = PBXGroup;
 			children = (
+				8AF787261AAF8D2D00FF9905 /* AVFoundation.framework */,
 				8A3FB7741AAA448700114D62 /* HiObjectiveC */,
 				8AF763261AAB7EAD00FF9905 /* ScreenRecorder */,
 				8A3FB7731AAA448700114D62 /* Products */,
@@ -335,6 +339,7 @@
 				8AF7632A1AAB7EAD00FF9905 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
