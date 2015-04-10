@@ -10,22 +10,10 @@
 		8A3FB7761AAA448700114D62 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A3FB7751AAA448700114D62 /* main.m */; };
 		8A8C90961AAA7BB00056B8C6 /* CarUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A8C90951AAA7BB00056B8C6 /* CarUtilities.m */; };
 		8A8C90991AAA88090056B8C6 /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A8C90981AAA88090056B8C6 /* Car.m */; };
-		8AF763281AAB7EAD00FF9905 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF763271AAB7EAD00FF9905 /* main.m */; };
-		8AF7632F1AAB81F500FF9905 /* ScreenRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF7632E1AAB81F500FF9905 /* ScreenRecorder.m */; };
-		8AF787271AAF8D2D00FF9905 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AF787261AAF8D2D00FF9905 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		8A3FB7701AAA448700114D62 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-		};
-		8AF763231AAB7EAD00FF9905 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -43,10 +31,6 @@
 		8A8C90951AAA7BB00056B8C6 /* CarUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarUtilities.m; sourceTree = "<group>"; };
 		8A8C90971AAA88090056B8C6 /* Car.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Car.h; sourceTree = "<group>"; };
 		8A8C90981AAA88090056B8C6 /* Car.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Car.m; sourceTree = "<group>"; };
-		8AF763251AAB7EAD00FF9905 /* ScreenRecorder */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ScreenRecorder; sourceTree = BUILT_PRODUCTS_DIR; };
-		8AF763271AAB7EAD00FF9905 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		8AF7632D1AAB81F500FF9905 /* ScreenRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenRecorder.h; sourceTree = SOURCE_ROOT; };
-		8AF7632E1AAB81F500FF9905 /* ScreenRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScreenRecorder.m; sourceTree = SOURCE_ROOT; };
 		8AF787261AAF8D2D00FF9905 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -58,14 +42,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8AF763221AAB7EAD00FF9905 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8AF787271AAF8D2D00FF9905 /* AVFoundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -74,7 +50,6 @@
 			children = (
 				8AF787261AAF8D2D00FF9905 /* AVFoundation.framework */,
 				8A3FB7741AAA448700114D62 /* HiObjectiveC */,
-				8AF763261AAB7EAD00FF9905 /* ScreenRecorder */,
 				8A3FB7731AAA448700114D62 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -83,7 +58,6 @@
 			isa = PBXGroup;
 			children = (
 				8A3FB7721AAA448700114D62 /* HiObjectiveC */,
-				8AF763251AAB7EAD00FF9905 /* ScreenRecorder */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -98,16 +72,6 @@
 				8A8C90951AAA7BB00056B8C6 /* CarUtilities.m */,
 			);
 			path = HiObjectiveC;
-			sourceTree = "<group>";
-		};
-		8AF763261AAB7EAD00FF9905 /* ScreenRecorder */ = {
-			isa = PBXGroup;
-			children = (
-				8AF7632D1AAB81F500FF9905 /* ScreenRecorder.h */,
-				8AF7632E1AAB81F500FF9905 /* ScreenRecorder.m */,
-				8AF763271AAB7EAD00FF9905 /* main.m */,
-			);
-			path = ScreenRecorder;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,23 +94,6 @@
 			productReference = 8A3FB7721AAA448700114D62 /* HiObjectiveC */;
 			productType = "com.apple.product-type.tool";
 		};
-		8AF763241AAB7EAD00FF9905 /* ScreenRecorder */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8AF7632B1AAB7EAD00FF9905 /* Build configuration list for PBXNativeTarget "ScreenRecorder" */;
-			buildPhases = (
-				8AF763211AAB7EAD00FF9905 /* Sources */,
-				8AF763221AAB7EAD00FF9905 /* Frameworks */,
-				8AF763231AAB7EAD00FF9905 /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = ScreenRecorder;
-			productName = ScreenRecorder;
-			productReference = 8AF763251AAB7EAD00FF9905 /* ScreenRecorder */;
-			productType = "com.apple.product-type.tool";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -157,9 +104,6 @@
 				ORGANIZATIONNAME = "Prajna Kandarpa";
 				TargetAttributes = {
 					8A3FB7711AAA448700114D62 = {
-						CreatedOnToolsVersion = 6.1.1;
-					};
-					8AF763241AAB7EAD00FF9905 = {
 						CreatedOnToolsVersion = 6.1.1;
 					};
 				};
@@ -177,7 +121,6 @@
 			projectRoot = "";
 			targets = (
 				8A3FB7711AAA448700114D62 /* HiObjectiveC */,
-				8AF763241AAB7EAD00FF9905 /* ScreenRecorder */,
 			);
 		};
 /* End PBXProject section */
@@ -190,15 +133,6 @@
 				8A8C90991AAA88090056B8C6 /* Car.m in Sources */,
 				8A3FB7761AAA448700114D62 /* main.m in Sources */,
 				8A8C90961AAA7BB00056B8C6 /* CarUtilities.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8AF763211AAB7EAD00FF9905 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8AF763281AAB7EAD00FF9905 /* main.m in Sources */,
-				8AF7632F1AAB81F500FF9905 /* ScreenRecorder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,24 +227,6 @@
 			};
 			name = Release;
 		};
-		8AF763291AAB7EAD00FF9905 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		8AF7632A1AAB7EAD00FF9905 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -328,15 +244,6 @@
 			buildConfigurations = (
 				8A3FB77A1AAA448700114D62 /* Debug */,
 				8A3FB77B1AAA448700114D62 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		8AF7632B1AAB7EAD00FF9905 /* Build configuration list for PBXNativeTarget "ScreenRecorder" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8AF763291AAB7EAD00FF9905 /* Debug */,
-				8AF7632A1AAB7EAD00FF9905 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
