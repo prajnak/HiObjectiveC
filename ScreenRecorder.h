@@ -10,12 +10,18 @@
 #import <AVFoundation/AVFoundation.h>
 
 @interface ScreenRecorder : NSObject
-<AVCaptureFileOutputRecordingDelegate> {
+<AVCapture> {
 @private
     AVCaptureSession *mSession;
     AVCaptureMovieFileOutput *mMovFileOutput;
     NSTimer *mTimer;
+    
 }
+
+@property (nonatomic, readonly) AVCaptureSession *captureSession;
+@property (nonatomic, readonly) AVCaptureScreenInput *videoCaptureScreen;
+@property (nonatomic, readonly) AVCaptureVideoDataOutput *videoOutput;
+@property (nonatomic, readonly) AVCaptureAudioDataOutput *audioOutput;
 
 -(void)screenRecording:(NSURL *)destPath;
 
